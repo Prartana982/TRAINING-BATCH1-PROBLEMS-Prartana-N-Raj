@@ -22,6 +22,10 @@ public class Exception {
         {
             System.out.print("No value is assigned to this\n");
         }
+        finally
+        {
+            System.out.print("Program executed");
+        }
         System.out.print("Code is Executed\n");
     }
 }
