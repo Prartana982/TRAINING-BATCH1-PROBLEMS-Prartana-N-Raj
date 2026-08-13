@@ -1,6 +1,6 @@
 package training;
 import java.util.*;
-public class Exception {
+public class Exception1 {
     static void main() {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
