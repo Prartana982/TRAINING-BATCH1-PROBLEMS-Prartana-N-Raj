@@ -1,37 +1,77 @@
-package training;
-class InsufficientBalanceException extends RuntimeException
-{
-	InsufficientBalanceException(String er)
-	{
-		super(er);
+
+class BankAccount {
+	static String BankName = "Mariamman Indian Bank";
+	private long accountNumber;
+	private String accountHolderName;
+	private long mobileNumber;
+	private String accountType;
+	private double balance;
+
+	BankAccount(int accountNumber, String accountHolderName, long mobileNumber, String accountType, double balance) {
+		this.accountNumber = accountNumber;
+		this.accountHolderName = accountHolderName;
+		this.mobileNumber = mobileNumber;
+		this.accountType = accountType;
+		this.balance = balance;
 	}
-}
-class Account
-{
-	int balance;
-	Account(int balance)
+	public String getAccountHolderName()
 	{
-		this.balance=balance;
+		return accountHolderName;
 	}
-	void withdraw(int amount)
+	public long getmobileNumber()
 	{
-		if(balance-amount<=0)
+		return mobileNumber;
+	}
+	public String getAccountType()
+	{
+		return accountType;
+	}
+	public double getBalance()
+	{
+		return balance;
+	}
+	public long getAccountNumber()
+	{
+		return accountNumber;
+	}
+	public void setMobileNumber(long num)
+	{
+		this.mobileNumber = num;
+	}
+	public void deposit(double amount)
+	{
+		if(amount<=0)
 		{
-			throw new InsufficientBalanceException("Insufficient funds");
+			System.out.print("Invalid Amount");
+		}
+		else {
+			balance+=amount;
+		}
+	}
+	public void withdraw(double amount)
+	{
+		if(amount<=0)
+		{
+			System.out.print("Invalid withdrawal amount\n");
+		}
+		else if(amount>=balance)
+		{
+			System.out.print("Insufficient Funds\n");
 		}
 		else
 		{
 			balance-=amount;
-			System.out.print("Amount has been withdrawn successfully.");
+			System.out.print("Amount withdrawn Successfully\n");
 		}
 	}
+
 }
-public class Bank {
-
+public class Main {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Account ac= new Account(500);
-		ac.withdraw(600);
-	}
+		BankAccount bn1= new BankAccount(23431533415,"John",4135224214,"Savings",25000);
+		BankAccount bn2 = new BankAccount(324552432424,"Julia",2131412453,"Current",15000);
+		bn1.withdraw(300);
+		bn2.withdraw(40000);
 
+	}
 }
