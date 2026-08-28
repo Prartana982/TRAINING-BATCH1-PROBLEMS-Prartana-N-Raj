@@ -5,7 +5,7 @@ public class Frequency {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter a string in lowercase: ");
         String k=sc.nextLine();
-        Map<Character,Integer> map = new HashMap<>();
+        Map<Character,Integer> map = new LinkedHashMap<>();
         for(int i=0;i<k.length();i++)
         {
             char ki = k.charAt(i);
