@@ -1,15 +1,15 @@
 import java.util.*;
-class order extends Thread{
+class Order extends Thread{
     public void run() {
         for (int i = 1; i < 6; i++) {
             try {
                 Thread.sleep(4000);
             }catch(Exception e){}
-            System.out.print("Order" + i + " being processed\n");
+            System.out.print("Order " + i + " being processed\n");
         }
     }
 }
-class kitchen extends Thread{
+class Kitchen extends Thread{
     public void run()
     {
         for(int i=1;i<6;i++)
@@ -21,7 +21,7 @@ class kitchen extends Thread{
         }
     }
 }
-class delivery extends Thread{
+class Delivery extends Thread{
     public void run()
     {
         for(int i=1;i<6;i++)
@@ -35,9 +35,9 @@ class delivery extends Thread{
 }
 public class Threadingclasstask {
     public static void main(String[] args) {
-        order t1 = new order();
-        kitchen t2 = new kitchen();
-        delivery t3 = new delivery();
+        Order t1 = new Order();
+        Kitchen t2 = new Kitchen();
+        Delivery t3 = new Delivery();
         t1.start();
         t2.start();
         t3.start();
